@@ -1,12 +1,17 @@
 function ListGroup() {
+  const items = ["Mauritius", "Canada", "England", "South Africa"];
+
   return (
-    <ul className="list-group">
-      <li className="list-group-item">1</li>
-      <li className="list-group-item">2</li>
-      <li className="list-group-item">3</li>
-      <li className="list-group-item">4</li>
-      <li className="list-group-item">5</li>
-    </ul>
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li key={item} className="list-group-item">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

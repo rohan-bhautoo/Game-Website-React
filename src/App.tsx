@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Message from "./Message";
 
 function App() {
   const [cart, setCart] = useState({
@@ -18,7 +19,12 @@ function App() {
     });
   };
 
-  return <div></div>;
+  return (
+    <>
+      <Message></Message>
+      <Message></Message>
+    </>
+  );
 }
 
 export default App;

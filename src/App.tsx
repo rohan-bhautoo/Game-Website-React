@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    const { request, cancel } = userService.getAllUsers();
+    const { request, cancel } = userService.getAll<User>();
     request
       .then((res) => {
         setUsers(res.data);
@@ -28,7 +28,7 @@ function App() {
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id !== user.id));
 
-    userService.deleteUser(user.id).catch((err) => {
+    userService.delete(user.id).catch((err) => {
       if (err instanceof CanceledError) return;
       setError((err as AxiosError).message);
       setUsers(originalUsers);
@@ -42,7 +42,7 @@ function App() {
     setUsers([...users, newUser]);
 
     userService
-      .addUser(newUser)
+      .add(newUser)
       .then((res) => {
         setUsers([...users, res.data]);
       })
@@ -59,7 +59,7 @@ function App() {
 
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
 
-    userService.updateUser(updatedUser).catch((err) => {
+    userService.update(updatedUser).catch((err) => {
       if (err instanceof CanceledError) return;
       setError((err as AxiosError).message);
       setUsers(originalUsers);

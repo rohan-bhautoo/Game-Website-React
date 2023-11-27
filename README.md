@@ -8,12 +8,16 @@
   <img alt="Bootstrap" src="https://img.shields.io/npm/v/bootstrap.svg?logo=bootstrap&label=Bootstrap" />
 </p>
 
-The game website was developed using vite with React which uses a faster and more efficient build system and provides a faster and more efficient development server. The website UI was cloned from the website [rawg.io](https://rawg.io/) which also provides a list of APIs for the website. Users are able to search games by name or genre or platform and also filter the games with different options.
+The game website was developed using vite with React which uses a faster and more efficient build system and provides a faster and more efficient development server. The website UI was cloned from the website [rawg.io](https://rawg.io/) which also provides a list of APIs for the website. Users are able to search games by name or genre or platform, filter the games with different options and also switch from dark/light mode.
 
 ![Web capture_27-11-2023_142311_game-website-react vercel app](https://github.com/rohan-bhautoo/Game-Website-React/assets/47154593/cdb28ff2-dc45-4c10-9174-db9613ed3ed3)
 
 ## Dependencies
 
+### npm
+```bash
+
+```
 ### React
 ### React Icons
 ### Chakra UI

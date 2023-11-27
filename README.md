@@ -19,13 +19,20 @@ The game website was developed using vite with React which uses a faster and mor
 
 ```
 ### React
+React is a free and open-source front-end JavaScript library for building user interfaces based on components.
+```json
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+```
 ### React Icons
 ### Chakra UI
 ### Axios
 ### Bootstrap
 
 ## Installation
-
+```bash
+npm i
+```
 ## Usage
 
 ## Author

@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500px" src="" alt="" border="0">
+  <img width="200px" src="src/assets/logo.webp" alt="logo" border="0">
 </p>
 <p>
   <img alt="Node" src="https://img.shields.io/npm/v/npm.svg?logo=nodedotjs" />
@@ -8,6 +8,8 @@
   <img alt="Axios" src="https://img.shields.io/npm/v/axios.svg?logo=axios&label=Axios" />
   <img alt="Bootstrap" src="https://img.shields.io/npm/v/bootstrap.svg?logo=bootstrap&label=Bootstrap" />
 </p>
+
+![Web capture_27-11-2023_142311_game-website-react vercel app](https://github.com/rohan-bhautoo/Game-Website-React/assets/47154593/cdb28ff2-dc45-4c10-9174-db9613ed3ed3)
 
 ## Dependencies
 

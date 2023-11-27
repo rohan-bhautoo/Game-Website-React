@@ -4,10 +4,11 @@
 <p>
   <img alt="Node" src="https://img.shields.io/npm/v/npm.svg?logo=nodedotjs" />
   <img alt="React" src="https://img.shields.io/npm/v/react.svg?logo=react&label=React" />
-  <img alt="Chakra UI" src="https://img.shields.io/npm/v/chakra-ui.svg?logo=chakraui&label=Chakra UI" />
   <img alt="Axios" src="https://img.shields.io/npm/v/axios.svg?logo=axios&label=Axios" />
   <img alt="Bootstrap" src="https://img.shields.io/npm/v/bootstrap.svg?logo=bootstrap&label=Bootstrap" />
 </p>
+
+The game website was developed using vite with React which uses a faster and more efficient build system and provides a faster and more efficient development server. The website UI was cloned from the website [rawg.io](https://rawg.io/) which also provides a list of APIs for the website. Users are able to search games by name or genre or platform and also filter the games with different options.
 
 ![Web capture_27-11-2023_142311_game-website-react vercel app](https://github.com/rohan-bhautoo/Game-Website-React/assets/47154593/cdb28ff2-dc45-4c10-9174-db9613ed3ed3)
 
@@ -18,10 +19,6 @@
 ### Chakra UI
 ### Axios
 ### Bootstrap
-
-#### Library
-
-#####
 
 ## Installation
 

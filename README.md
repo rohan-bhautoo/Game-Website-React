@@ -16,7 +16,8 @@ The game website was developed using vite with React which uses a faster and mor
 
 ### npm
 ```bash
-
+npm -v
+10.2.4
 ```
 ### React
 React is a free and open-source front-end JavaScript library for building user interfaces based on components.
@@ -24,16 +25,48 @@ React is a free and open-source front-end JavaScript library for building user i
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
 ```
+
 ### React Icons
+Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+```json
+"react-icons": "^4.12.0"
+```
+
 ### Chakra UI
+Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+```json
+"react-icons": "^4.12.0"
+```
+
 ### Axios
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
+```json
+"axios": "^1.6.2"
+```
+
 ### Bootstrap
+Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
+```json
+"bootstrap": "^5.3.2"
+```
 
 ## Installation
+
+### Clone the repository
+```bash
+git clone https://github.com/rohan-bhautoo/Game-Website-React.git
+```
+
+### Install the dependencies
 ```bash
 npm i
 ```
+
 ## Usage
+Execute the command below to open a local session.
+```bash
+npm run dev
+```
 
 ## Author
 

@@ -2,13 +2,16 @@
   <img width="500px" src="" alt="" border="0">
 </p>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.7.8-brightgreen.svg" />
-  <img alt="Python" src="https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white" />
+  <img alt="Node" src="https://img.shields.io/npm/v/npm.svg?logo=nodedotjs" />
 </p>
 
 ## Dependencies
 
-###
+### React
+### React Icons
+### Chakra UI
+### Axios
+### Bootstrap
 
 #### Library
 

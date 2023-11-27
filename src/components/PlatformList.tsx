@@ -13,6 +13,8 @@ import { Platform } from "../hooks/useGames";
 import usePlatforms from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
+import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface Props {
   onSelectPlatform: (genre: Platform) => void;
@@ -22,6 +24,12 @@ interface Props {
 const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, isLoading, error } = usePlatforms();
   const iconMap: { [key: string]: IconType } = allPlatforms;
+  const [isListOpen, setIsListOpen] = useState(false);
+  const platformsToShowInitially = 3;
+
+  const visiblePlatforms = isListOpen
+    ? data
+    : data.slice(0, platformsToShowInitially);
 
   if (error) return null;
 
@@ -33,7 +41,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
         Platforms
       </Heading>
       <List>
-        {data
+        {visiblePlatforms
           .filter((platform) => iconMap.hasOwnProperty(platform.slug))
           .map((platform) => (
             <ListItem key={platform.id} paddingY="5px">
@@ -77,6 +85,24 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
             </ListItem>
           ))}
       </List>
+      {!isListOpen && data.length > platformsToShowInitially && (
+        <IconButton
+          onClick={() => setIsListOpen(true)}
+          aria-label="Show All"
+          icon={<Icon as={FaChevronDown} />}
+        />
+      )}
+      {isListOpen && (
+        <>
+          {data.length > platformsToShowInitially && (
+            <IconButton
+              onClick={() => setIsListOpen(false)}
+              aria-label="Show Less"
+              icon={<Icon as={FaChevronUp} />}
+            />
+          )}
+        </>
+      )}
     </>
   );
 };

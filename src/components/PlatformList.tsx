@@ -6,7 +6,6 @@ import {
   IconButton,
   List,
   ListItem,
-  Spinner,
 } from "@chakra-ui/react";
 
 import { Platform } from "../hooks/useGames";
@@ -14,6 +13,7 @@ import usePlatforms from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import PlatformListSkeleton from "./PlatformListSkeleton";
 
 interface Props {
   onSelectPlatform: (genre: Platform) => void;
@@ -24,6 +24,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, isLoading, error, isListOpen, setIsListOpen } = usePlatforms();
   const iconMap: { [key: string]: IconType } = allPlatforms;
   const platformsToShowInitially = 3;
+  const skeletons = [1, 2, 3];
 
   const visiblePlatforms = isListOpen
     ? data
@@ -31,13 +32,13 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
 
   if (error) return null;
 
-  if (isLoading) return <Spinner />;
-
   return (
     <>
       <Heading fontSize={"2xl"} marginBottom={1}>
         Platforms
       </Heading>
+      {isLoading &&
+        skeletons.map((skeleton) => <PlatformListSkeleton key={skeleton} />)}
       <List>
         {visiblePlatforms
           .filter((platform) => iconMap.hasOwnProperty(platform.slug))

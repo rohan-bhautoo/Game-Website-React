@@ -13,7 +13,6 @@ import { Platform } from "../hooks/useGames";
 import usePlatforms from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
-import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 interface Props {
@@ -22,9 +21,8 @@ interface Props {
 }
 
 const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const { data, isLoading, error } = usePlatforms();
+  const { data, isLoading, error, isListOpen, setIsListOpen } = usePlatforms();
   const iconMap: { [key: string]: IconType } = allPlatforms;
-  const [isListOpen, setIsListOpen] = useState(false);
   const platformsToShowInitially = 3;
 
   const visiblePlatforms = isListOpen

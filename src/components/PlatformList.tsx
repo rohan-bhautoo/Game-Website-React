@@ -7,9 +7,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-
-import { Platform } from "../hooks/useGames";
-import usePlatforms from "../hooks/usePlatforms";
+import usePlatforms, { Platform } from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";

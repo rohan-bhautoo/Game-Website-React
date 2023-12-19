@@ -14,10 +14,10 @@ import PlatformListSkeleton from "./PlatformListSkeleton";
 
 interface Props {
   onSelectPlatform: (genre: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const PlaformList = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, isLoading, error } = usePlatforms();
   const iconMap: { [key: string]: IconType } = allPlatforms;
   const skeletons = [1, 2, 3];
@@ -43,7 +43,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
                   boxSize="32px"
                   borderRadius={8}
                   bgColor={
-                    platform.id === selectedPlatform?.id ? "white" : "gray.700"
+                    platform.id === selectedPlatformId ? "white" : "gray.700"
                   }
                   objectFit={"cover"}
                   icon={
@@ -51,7 +51,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
                       key={platform.id}
                       as={iconMap[platform.slug]}
                       color={
-                        platform.id === selectedPlatform?.id
+                        platform.id === selectedPlatformId
                           ? "black"
                           : "gray.500"
                       }
@@ -61,7 +61,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatform }: Props) => {
                 />
                 <Button
                   fontWeight={
-                    platform.id === selectedPlatform?.id ? "bold" : "normal"
+                    platform.id === selectedPlatformId ? "bold" : "normal"
                   }
                   onClick={() => onSelectPlatform(platform)}
                   fontSize="lg"

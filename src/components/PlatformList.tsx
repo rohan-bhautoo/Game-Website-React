@@ -7,18 +7,17 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-import usePlatforms, { Platform } from "../hooks/usePlatforms";
+import usePlatforms from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
 import PlatformListSkeleton from "./PlatformListSkeleton";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectPlatform: (genre: Platform) => void;
-  selectedPlatformId?: number;
-}
-
-const PlaformList = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+const PlaformList = () => {
   const { data, isLoading, error } = usePlatforms();
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
+
   const iconMap: { [key: string]: IconType } = allPlatforms;
   const skeletons = [1, 2, 3];
 
@@ -39,7 +38,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatformId }: Props) => {
               <HStack>
                 <IconButton
                   key={platform.id}
-                  onClick={() => onSelectPlatform(platform)}
+                  onClick={() => setSelectedPlatformId(platform.id)}
                   boxSize="32px"
                   borderRadius={8}
                   bgColor={
@@ -63,7 +62,7 @@ const PlaformList = ({ onSelectPlatform, selectedPlatformId }: Props) => {
                   fontWeight={
                     platform.id === selectedPlatformId ? "bold" : "normal"
                   }
-                  onClick={() => onSelectPlatform(platform)}
+                  onClick={() => setSelectedPlatformId(platform.id)}
                   fontSize="lg"
                   variant="link"
                   whiteSpace={"normal"}

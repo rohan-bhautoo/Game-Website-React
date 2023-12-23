@@ -1,7 +1,7 @@
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import allPlatforms from "../data/platform-icons";
-import { Platform } from "../hooks/usePlatforms";
+import { Platform } from "../entities/Platform";
 
 interface Props {
   platforms: Platform[];
